@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兒童健康體位大冒險 - 健康小勇士集合！</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #3B82F6;
+            border-radius: 2px;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-heart-pulse text-rose-500 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-wide text-gray-800">健康體位大冒險</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#check" class="text-gray-600 hover:text-rose-500 transition px-3 py-2 rounded-md text-sm font-medium">身體密碼</a>
+                    <a href="#eat" class="text-gray-600 hover:text-green-500 transition px-3 py-2 rounded-md text-sm font-medium">飲食攻略</a>
+                    <a href="#move" class="text-gray-600 hover:text-orange-500 transition px-3 py-2 rounded-md text-sm font-medium">運動挑戰</a>
+                    <a href="#relax" class="text-gray-600 hover:text-blue-500 transition px-3 py-2 rounded-md text-sm font-medium">身心調適</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#check" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-500 hover:bg-gray-50">身體密碼</a>
+                <a href="#eat" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-500 hover:bg-gray-50">飲食攻略</a>
+                <a href="#move" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-gray-50">運動挑戰</a>
+                <a href="#relax" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">身心調適</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="bg-rose-100 text-rose-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4 inline-block">Kids Health Journey</span>
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mb-6">
+                打造你的 <span class="text-rose-500">超能健康</span> 體質
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+                歡迎來到健康冒險島！這裡有 8 個關卡等你來挑戰。<br>
+                從認識自己的身體開始，學會聰明吃、快樂動，最後學會放鬆心情。
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="#check" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1">
+                    開始冒險 <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-30">
+            <div class="absolute top-10 left-10 w-24 h-24 bg-yellow-200 rounded-full blur-2xl"></div>
+            <div class="absolute bottom-10 right-10 w-32 h-32 bg-blue-200 rounded-full blur-2xl"></div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- Stage 1: Assessment -->
+        <section id="check" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 section-title after:bg-rose-500">第一站：身體密碼</h2>
+                <p class="mt-4 text-gray-500">知己知彼，百戰百勝！先來看看你的身體狀況。</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- App 1 -->
+                <a href="https://lukehsiao-yc.github.io/obesity-survey-app/" target="_blank" class="block bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover group">
+                    <div class="flex items-start justify-between">
+                        <div class="bg-rose-100 p-3 rounded-xl text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-scale-balanced text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-gray-400 bg-gray-100 px-2 py-1 rounded">檢測工具</span>
+                    </div>
+                    <h3 class="mt-4 text-xl font-bold text-gray-900 group-hover:text-rose-500 transition">體位肥胖檢測</h3>
+                    <p class="mt-2 text-gray-600">輸入身高體重，快速了解自己的 BMI 指數與健康體位狀態。</p>
+                    <div class="mt-4 flex items-center text-rose-500 text-sm font-semibold">
+                        立即檢測 <i class="fa-solid fa-arrow-right ml-1 group-hover:translate-x-1 transition"></i>
+                    </div>
+                </a>
+
+                <!-- App 2 -->
+                <a href="https://taiwan-children-diet-recommendation-wf3byicfwztgybamvupbdw.streamlit.app/" target="_blank" class="block bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover group">
+                    <div class="flex items-start justify-between">
+                        <div class="bg-rose-100 p-3 rounded-xl text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-utensils text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-gray-400 bg-gray-100 px-2 py-1 rounded">查詢工具</span>
+                    </div>
+                    <h3 class="mt-4 text-xl font-bold text-gray-900 group-hover:text-rose-500 transition">兒童每日飲食份數查詢</h3>
+                    <p class="mt-2 text-gray-600">根據年齡與活動量，算出你一天到底需要吃多少份量的各類食物。</p>
+                    <div class="mt-4 flex items-center text-rose-500 text-sm font-semibold">
+                        查詢份數 <i class="fa-solid fa-arrow-right ml-1 group-hover:translate-x-1 transition"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Stage 2: Diet Knowledge -->
+        <section id="eat" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 section-title after:bg-green-500">第二站：飲食攻略</h2>
+                <p class="mt-4 text-gray-500">學會選對食物，讓身體充滿能量！</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- App 3 -->
+                <a href="https://lukehsiao-yc.github.io/calorie_density/" target="_blank" class="block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover group h-full">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">認識熱量密度</h3>
+                    <p class="text-sm text-gray-600 mb-4">為什麼有些食物吃一點就胖？透過互動圖表，秒懂熱量密度的秘密。</p>
+                    <div class="mt-auto text-green-600 text-sm font-semibold">探索知識 &rarr;</div>
+                </a>
+
+                <!-- App 4 -->
+                <a href="https://tkrm7d.csb.app/" target="_blank" class="block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover group h-full">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-burger text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">早餐外食怎麼選</h3>
+                    <p class="text-sm text-gray-600 mb-4">便利商店或早餐店該怎麼點餐？來看看哪些是優質早餐組合。</p>
+                    <div class="mt-auto text-green-600 text-sm font-semibold">挑選早餐 &rarr;</div>
+                </a>
+
+                 <!-- App 5 -->
+                 <a href="https://lukehsiao-yc.github.io/foodrunmobile/" target="_blank" class="block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover group h-full">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-gamepad text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">紅綠燈食物遊戲</h3>
+                    <p class="text-sm text-gray-600 mb-4">邊玩邊學！透過跑酷遊戲，學習分辨哪些是紅燈（少吃）與綠燈（多吃）食物。</p>
+                    <div class="mt-auto text-green-600 text-sm font-semibold">開始遊戲 &rarr;</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Stage 3: Exercise Challenge -->
+        <section id="move" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 section-title after:bg-orange-500">第三站：運動挑戰</h2>
+                <p class="mt-4 text-gray-500">動滋動滋！起來活動筋骨，趕走脂肪。</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- App 6 -->
+                <a href="https://lukehsiao-yc.github.io/exercise-snack-game-adolescents/" target="_blank" class="relative group overflow-hidden rounded-2xl shadow-md h-64 block">
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 transition-transform duration-300 group-hover:scale-105"></div>
+                    <div class="absolute inset-0 bg-black opacity-10 group-hover:opacity-0 transition"></div>
+                    <div class="relative p-8 h-full flex flex-col justify-between text-white">
+                        <div>
+                            <div class="bg-white/20 w-fit px-3 py-1 rounded-full text-xs font-bold mb-3 backdrop-blur-sm">青少年版</div>
+                            <h3 class="text-2xl font-bold mb-2">運動點心 (Exercise Snack)</h3>
+                            <p class="text-orange-50 font-medium opacity-90">利用零碎時間動起來！短時間、高效率的趣味運動挑戰。</p>
+                        </div>
+                        <div class="flex items-center font-bold">
+                            立即挑戰 <i class="fa-solid fa-person-running ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- App 8 -->
+                <a href="https://lukehsiao-yc.github.io/fatfat/" target="_blank" class="relative group overflow-hidden rounded-2xl shadow-md h-64 block">
+                    <div class="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-600 transition-transform duration-300 group-hover:scale-105"></div>
+                    <div class="absolute inset-0 bg-black opacity-10 group-hover:opacity-0 transition"></div>
+                    <div class="relative p-8 h-full flex flex-col justify-between text-white">
+                        <div>
+                            <div class="bg-white/20 w-fit px-3 py-1 rounded-full text-xs font-bold mb-3 backdrop-blur-sm">核心訓練</div>
+                            <h3 class="text-2xl font-bold mb-2">挑戰瘦肚子運動</h3>
+                            <p class="text-yellow-50 font-medium opacity-90">想甩掉小腹婆/大肚腩的稱號嗎？跟著指令一起燃燒腹部脂肪。</p>
+                        </div>
+                        <div class="flex items-center font-bold">
+                            開始燃燒 <i class="fa-solid fa-fire ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Stage 4: Mindfulness -->
+        <section id="relax" class="scroll-mt-24 mb-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 section-title after:bg-blue-500">第四站：身心調適</h2>
+                <p class="mt-4 text-gray-500">健康的身體需要平靜的心靈。</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                 <!-- App 7 -->
+                 <a href="https://lukehsiao-yc.github.io/breathing/" target="_blank" class="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover group">
+                    <div class="bg-blue-50 md:w-1/3 flex items-center justify-center p-8 group-hover:bg-blue-100 transition">
+                        <i class="fa-solid fa-lungs text-6xl text-blue-400 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <div class="p-8 md:w-2/3 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-blue-500 transition">腹式呼吸練習</h3>
+                        <p class="mt-2 text-gray-600">壓力大或緊張時，透過引導式的呼吸練習，幫助你放鬆神經，穩定情緒。</p>
+                        <div class="mt-6">
+                            <span class="text-blue-500 font-bold border-b-2 border-blue-100 pb-1 group-hover:border-blue-500 transition">開始練習</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4 text-rose-400">
+                <i class="fa-solid fa-heart"></i>
+                <span class="font-bold text-lg">兒童健康體位計畫</span>
+            </div>
+            <p class="text-gray-400 text-sm">
+                這些互動遊戲皆為輔助教育工具，若有具體醫療需求，請諮詢專業醫師或營養師。<br>
+                Designed for Kids Health Education.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
